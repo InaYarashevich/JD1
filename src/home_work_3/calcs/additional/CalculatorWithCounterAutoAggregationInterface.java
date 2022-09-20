@@ -1,0 +1,51 @@
+package home_work_3.calcs.additional;
+
+import home_work_3.calcs.api.ICalculator;
+
+public class CalculatorWithCounterAutoAggregationInterface {
+    private ICalculator calculator;
+    private long count;
+
+    public CalculatorWithCounterAutoAggregationInterface(ICalculator theCalculator) {
+        this.calculator = theCalculator;
+    }
+
+    public double subtract(double x, double y) {
+        count++;
+        return calculator.subtract(x, y);
+    }
+
+    public double multiply(double x, double y) {
+        count++;
+        return calculator.multiply(x, y);
+    }
+
+    public double add(double x, double y) {
+        count++;
+        return calculator.add(x, y);
+    }
+
+    public double divide(double x, double y) {
+        count++;
+        return calculator.divide(x, y);
+    }
+
+    public double power(double number, int exponent) {
+        count++;
+        return calculator.power(number, exponent);
+    }
+
+    public double absoluteValue(double number) {
+        count++;
+        return calculator.absoluteValue(number);
+    }
+
+    public double squareRoot(double number) {
+        count++;
+        return calculator.squareRoot(number);
+    }
+
+    public long getCountOperation() {
+        return count;
+    }
+}
