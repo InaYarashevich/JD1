@@ -60,4 +60,18 @@ public class SortsUtilsBubbleTests {
                 SortsUtils.bubble(ArraysUtils.arrayFromConsole()));
     }
 
+    @Test
+    public void bubbleSort9Test() {
+        Assertions.assertArrayEquals(
+                new int[]{-2, 10, 14, 15, 15, 31},
+                SortsUtils.bubble(new int[]{10, -2, 31, 14, 15, 15}));
+    }
+
+    @Test
+    public void bubbleSort10Test() {
+        Assertions.assertArrayEquals(
+                new int[]{0, 0, 1, 2, 3},
+                SortsUtils.bubble(new int[]{3, 0, 1, 0, 2}));
+    }
+
 }
