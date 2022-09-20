@@ -1,4 +1,4 @@
-package home_work_2;
+package home_work_2.arrays;
 
 import home_work_2.arrays.Task2_4;
 import org.junit.jupiter.api.Assertions;
@@ -19,5 +19,8 @@ public class Task2_4Test {
                         && (Task2_4.getSumOfEvenPositiveNumbers(5, 100) % 2 == 0));
     }
 
-
+    @Test
+    public void getMaxTest(){
+        //Assertions.assertTrue();
+    }
 }

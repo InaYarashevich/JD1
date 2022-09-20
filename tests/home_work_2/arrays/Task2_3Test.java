@@ -1,4 +1,4 @@
-package home_work_2;
+package home_work_2.arrays;
 
 import home_work_2.arrays.Task2_3.DoWhileOperation;
 import home_work_2.arrays.Task2_3.ForEachOperation;

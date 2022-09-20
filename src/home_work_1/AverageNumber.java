@@ -15,7 +15,7 @@ public class AverageNumber {
         int thirdNumber = console.nextInt();
 
         int result = getAverageNumber(firstNumber, secondNumber, thirdNumber);
-        System.out.println(result); 
+        System.out.println(result);
     }
 
     public static int getAverageNumber(int firstNumber, int secondNumber, int thirdNumber) {
