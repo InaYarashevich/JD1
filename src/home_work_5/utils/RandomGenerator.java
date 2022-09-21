@@ -27,14 +27,14 @@ public class RandomGenerator implements IGenerator {
     }
 
     @Override
-    public String generateRandomIdentifiers(List<String> identifier, int position) {
+    public String generateRandomNamesAndNicks(List<String> identifier, int position) {
        return identifier.get(position);
     }
 
     @Override
     public String generatePassword(String characters, int characterBoundary) {
         StringBuffer password = new StringBuffer();
-        for (int i = 5; i < 11; i++) {
+        for (int i = 0; i < 11; i++) {
             password.append(characters.charAt(random.nextInt(characterBoundary)));
         }
         return password.toString();
@@ -42,7 +42,6 @@ public class RandomGenerator implements IGenerator {
 
     @Override
     public int generateAge() {
-
-        return 0;
+        return 1 + random.nextInt(15);
     }
 }
