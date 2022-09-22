@@ -2,7 +2,7 @@ package home_work_5.dto;
 
 import java.util.Objects;
 
-public class Animal {
+public class Animal implements Comparable{
     private int age;
     private String nick;
 
@@ -21,7 +21,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
+        return "{" +
                 "age=" + age +
                 ", nick='" + nick + '\'' +
                 '}';
@@ -39,5 +39,10 @@ public class Animal {
     @Override
     public int hashCode() {
         return Objects.hash(age, nick);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

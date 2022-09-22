@@ -2,7 +2,7 @@ package home_work_5.dto;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable{
     private String nick;
     private String password;
     private String name;
@@ -60,5 +60,10 @@ public class Person {
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
