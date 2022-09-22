@@ -7,4 +7,5 @@ public interface IGenerator {
     String generateRandomNamesAndNicks(List<String> identifier);
     String generatePassword(String characters, int characterBoundary);
     int generateAge();
+    String readNameOrNickFromFile(String filePath, int numberOfNamesInFile);
 }

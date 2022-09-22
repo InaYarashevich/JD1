@@ -1,5 +1,9 @@
 package home_work_5.utils;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -16,6 +20,11 @@ public class RandomGenerator implements IGenerator {
     public static final List<String> NICKS_ANIMALS = Arrays.asList("Тaйсон", "Джек", "Боня", "Рекс", "Джеси", "Хатико",
             "Дик", "Лорд", "Альма", "Рич", "Барон", "Вольт", "Каспер", "Лаки");
 
+    public static final String FILE_PATH_NAMES = "names.TXT";
+    public static final String FILE_PATH_NICKS = "nicks.TXT";
+    public static final String FILE_PATH_NICKS_ANIMALS = "nicksAnimals.TXT";
+
+
 
     @Override
     public String generateRandomString(String characterType, int stringLength, int characterBoundary) {
@@ -28,7 +37,7 @@ public class RandomGenerator implements IGenerator {
 
     @Override
     public String generateRandomNamesAndNicks(List<String> identifier) {
-       return identifier.get(random.nextInt(14));
+        return identifier.get(random.nextInt(14));
     }
 
     @Override
@@ -43,5 +52,22 @@ public class RandomGenerator implements IGenerator {
     @Override
     public int generateAge() {
         return 1 + random.nextInt(15);
+    }
+
+    @Override
+    public String readNameOrNickFromFile(String filePath, int numberOfNamesInFile) {
+        List<String> names = new ArrayList<>();
+        Random random = new Random();
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(filePath));
+            String line;
+            while ((line = in.readLine()) != null) {
+                names.add(line);
+            }
+            in.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return names.get(random.nextInt(numberOfNamesInFile));
     }
 }
