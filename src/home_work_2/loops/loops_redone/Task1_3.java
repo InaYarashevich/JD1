@@ -1,4 +1,4 @@
-package home_work_2.loops.loops_rework;
+package home_work_2.loops.loops_redone;
 
 public class Task1_3 {
     public static double power(double number, int power) {

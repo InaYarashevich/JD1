@@ -1,7 +1,6 @@
-package home_work_2.loops.loops_rework;
+package home_work_2.loops.loops_redone;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class Task1_5 {
         public static int findMaxInt(int number) {

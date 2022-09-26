@@ -1,4 +1,4 @@
-package home_work_2.loops.loops_rework;
+package home_work_2.loops.loops_redone;
 
 public class Task1_1 {
         public static long multiply(long number) {
