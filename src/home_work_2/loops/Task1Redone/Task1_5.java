@@ -1,4 +1,4 @@
-package home_work_2.loops.loops_redone;
+package home_work_2.loops.Task1Redone;
 
 import java.util.Random;
 

@@ -1,6 +1,4 @@
-package home_work_2.loops.loops_redone;
-
-import java.util.Scanner;
+package home_work_2.loops.Task1Redone;
 
 public class Task1_2 {
     public static String multiplyEach(String data) {
