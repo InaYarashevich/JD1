@@ -1,4 +1,4 @@
-package home_work_2.loops;
+package home_work_2.loops.Task1RedoneTests;
 
 import home_work_2.loops.Task1Redone.Task1_5;
 import org.junit.jupiter.api.Assertions;
