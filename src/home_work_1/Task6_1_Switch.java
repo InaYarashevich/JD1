@@ -13,13 +13,17 @@ public class Task6_1_Switch {
     }
 
     public static String printWelcome(String name) {
-        switch (name) {
-            case "Вася":
-                return "Привет! \nЯ тебя так долго ждал";
-            case "Анастасия":
-                return "Я тебя так долго ждал";
-            default:
-                return "Добрый день, а вы кто?";
+        try {
+            switch (name) {
+                case "Вася":
+                    return "Привет! \nЯ тебя так долго ждал";
+                case "Анастасия":
+                    return "Я тебя так долго ждал";
+                default:
+                    return "Добрый день, а вы кто?";
+            }
+        } catch (NullPointerException e) {
+            return "Добрый день, а вы кто?";
         }
     }
 }
