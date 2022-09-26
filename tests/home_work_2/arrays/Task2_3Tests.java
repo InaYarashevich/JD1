@@ -7,9 +7,8 @@ import home_work_2.arrays.Task2_3.WhileOperation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Task2_3Test {
-
-
+public class Task2_3Tests {
+    
     @Test
     public void doWhileOperationPrintAllTest() {
         DoWhileOperation doWhileOperation = new DoWhileOperation();

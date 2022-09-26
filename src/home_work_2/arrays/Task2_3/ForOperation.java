@@ -10,6 +10,7 @@ public class ForOperation implements IArraysOperation {
         int[] newArray = new int[array.length];
         for (j = 0; j < array.length; j++) {
             newArray[i] = array[j];
+            i++;
         }
         return newArray;
     }

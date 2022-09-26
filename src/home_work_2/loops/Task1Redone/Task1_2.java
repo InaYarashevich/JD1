@@ -5,6 +5,7 @@ public class Task1_2 {
         if (data == null) {
             return "Введено не число";
         }
+
         try {
             long number = Long.parseLong(data);
             String result = "";
@@ -25,10 +26,8 @@ public class Task1_2 {
             }
             return ("Введено целое\n" + result + " = " + multipleResult);
 
-        } catch (IsDoubleNotIntegerException e) {
+        } catch (NumberFormatException e) {
             return "Введено не целое число";
-        } catch (IsStringNotIntegerException ex) {
-            return "Введено не число";
         }
     }
 }
