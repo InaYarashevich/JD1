@@ -23,7 +23,7 @@ public class Task2_4 {
         System.out.println("Введите верхнюю границу диапазона: ");
         int highBorder = console.nextInt();
 
-        removeElementsFromArray(50, 100, lowBorder, highBorder);
+        removeElementsFromArray(50, 100);
 
         int sumOfArrayElementsResult = getSumOfArrayElementsNumbers(50, 100);
         System.out.println(sumOfArrayElementsResult);
@@ -51,19 +51,23 @@ public class Task2_4 {
         return max;
     }
 
-    public static void getElementsLessThanArithmeticMean(int size, int maxValueExclusion) {
+    public static int[] getElementsLessThanArithmeticMean(int size, int maxValueExclusion) {
         int[] array = ArraysUtils.arrayRandom(size, maxValueExclusion);
         int sum = 0;
         int mean = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+        int[] arithmeticMeanArray = new int[array.length];
+        int j = 0;
+        for (int i1 : array) {
+            sum += i1;
         }
         mean = sum / array.length;
         for (int i = 0; i < array.length; i++) {
             if (array[i] < mean) {
-                System.out.print(array[i] + " ");
+                arithmeticMeanArray[j] = array[i];
+                j++;
             }
         }
+        return arithmeticMeanArray;
     }
 
     public static void getMinElements(int size, int maxValueExclusion) {
@@ -92,15 +96,22 @@ public class Task2_4 {
         System.out.println("Второй минимальный элемент: " + array[min2]);
     }
 
-    public static void removeElementsFromArray(int size, int maxValueExclusion, int lowBorder, int highBorder) {
+    public static int[] removeElementsFromArray(int size, int maxValueExclusion) {
         int[] array = ArraysUtils.arrayRandom(size, maxValueExclusion);
+        int[] temp = new int[array.length];
         int i = 0;
+        int j = 0;
         while (i < array.length) {
-            if ((lowBorder <= i) && (i <= highBorder)) {
+            if (array[i] != 0) {
                 array[i] = 0;
+                temp[j] = array[i];
             }
             i++;
+            j++;
         }
+        int[] result = new int[temp.length - j];
+        System.arraycopy(temp, 0, result, 0, result.length);
+        return result;
     }
 
     public static int getSumOfArrayElementsNumbers(int size, int maxValueExclusion) {
