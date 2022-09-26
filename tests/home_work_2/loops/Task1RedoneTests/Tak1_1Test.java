@@ -1,6 +1,6 @@
 package home_work_2.loops;
 
-import home_work_2.loops.loops_redone.Task1_1;
+import home_work_2.loops.Task1Redone.Task1_1;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
