@@ -1,5 +1,7 @@
 package home_work_1;
 
+import org.jetbrains.annotations.Contract;
+
 import java.util.Scanner;
 
 public class Task6_1_Switch {
@@ -12,6 +14,7 @@ public class Task6_1_Switch {
         System.out.println(printWelcome(name));
     }
 
+    @Contract(pure = true)
     public static String printWelcome(String name) {
         try {
             switch (name) {
