@@ -38,4 +38,11 @@ public class Task6_1_SwitchTest {
                 "Добрый день, а вы кто?",
                 Task6_1_Switch.printWelcome(""));
     }
+
+    @Test
+    public void checkNullTest(){
+        Assertions.assertEquals(
+                "Добрый день, а вы кто?",
+                Task6_1_Switch.printWelcome(null));
+    }
 }

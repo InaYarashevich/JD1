@@ -38,4 +38,11 @@ public class Task6_1_IfElseTest {
                 "Добрый день, а вы кто?",
                 Task6_1_IfElse.printWelcome(""));
     }
+
+    @Test
+    public void checkNullTest(){
+        Assertions.assertEquals(
+                "Добрый день, а вы кто?",
+                Task6_1_IfElse.printWelcome(null));
+    }
 }
