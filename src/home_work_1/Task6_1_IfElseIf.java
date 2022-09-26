@@ -13,14 +13,18 @@ public class Task6_1_IfElseIf {
     }
 
     public static String printWelcome(String name) {
-        if (name.equalsIgnoreCase("Вася")) {
-            return "Привет! \nЯ тебя так долго ждал";
-        } else {
-            if (name.equalsIgnoreCase("Анастасия")) {
-                return "Я тебя так долго ждал";
+        try {
+            if (name.equalsIgnoreCase("Вася")) {
+                return "Привет! \nЯ тебя так долго ждал";
             } else {
-                return "Добрый день, а вы кто?";
+                if (name.equalsIgnoreCase("Анастасия")) {
+                    return "Я тебя так долго ждал";
+                } else {
+                    return "Добрый день, а вы кто?";
+                }
             }
+        } catch (NullPointerException e) {
+            return "Добрый день, а вы кто?";
         }
     }
 }
