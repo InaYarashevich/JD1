@@ -3,45 +3,57 @@ package home_work_3.calcs.additional;
 import home_work_3.calcs.simple.CalculatorWithMathCopy;
 
 public class CalculatorWithCounterAutoComposite {
-    private CalculatorWithMathCopy calculator = new CalculatorWithMathCopy();
-    private long count;
+    private CalculatorWithMathCopy calc;
+    private int count;
 
-    public long getCountOperations() {
-        return count;
+    public CalculatorWithCounterAutoComposite() {
+        this.calc = new CalculatorWithMathCopy();
     }
 
-    public double subtract(double x, double y) {
-        count++;
-        return calculator.subtract(x, y);
+    public double add(double a, double b){
+        incrementCountOperation();
+        return this.calc.add(a, b);
     }
 
-    public double multiply(double x, double y) {
-        count++;
-        return calculator.multiply(x, y);
+    public double subtract(double a, double b){
+        incrementCountOperation();
+        return this.calc.subtract(a, b);
     }
 
-    public double add(double x, double y) {
-        count++;
-        return calculator.add(x, y);
+    public double multiply(double a, double b){
+        incrementCountOperation();
+        return this.calc.multiply(a, b);
     }
 
-    public double divide(double x, double y) {
-        count++;
-        return calculator.divide(x, y);
+    public double divide(double a, double b){
+        incrementCountOperation();
+        return this.calc.divide(a, b);
     }
 
-    public double power(double number, int exponent) {
-        count++;
-        return calculator.power(number, exponent);
+    public double power(double a, int b){
+        incrementCountOperation();
+        return this.calc.power(a, b);
     }
 
-    public double absoluteValue(double number) {
-        count++;
-        return calculator.absoluteValue(number);
+    public double absoluteValue(double a){
+        incrementCountOperation();
+        return this.calc.absoluteValue(a);
     }
 
-    public double squareRoot(double number) {
-        count++;
-        return calculator.squareRoot(number);
+    public double squareRoot(double a){
+        incrementCountOperation();
+        return this.calc.squareRoot(a);
+    }
+
+    private void incrementCountOperation(){
+        incrementCountOperation(1);
+    }
+
+    private void incrementCountOperation(int count){
+        this.count += count;
+    }
+
+    public long getCountOperation(){
+        return this.count;
     }
 }
