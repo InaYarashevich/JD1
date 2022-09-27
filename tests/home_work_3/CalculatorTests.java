@@ -7,7 +7,7 @@ import home_work_3.calcs.simple.CalculatorWithOperator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class CalculatorTest {
+public class CalculatorTests {
     @Test
     public void calculatorWithCounterAutoAggregationTest() {
         CalculatorWithCounterAutoAggregation calculator = new CalculatorWithCounterAutoAggregation(
@@ -36,8 +36,8 @@ public class CalculatorTest {
                 new CalculatorWithMathCopy());
         Assertions.assertEquals(
                 140.45999999999998,
-                calculator.add2(4.1, (calculator.add2(calculator.multiply2(15, 7),
-                        calculator.power2(calculator.divide2(28.0, 5), 2)))));
+                calculator.add(4.1, (calculator.add(calculator.multiply(15, 7),
+                        calculator.power(calculator.divide(28.0, 5), 2)))));
 
     }
 
@@ -99,5 +99,47 @@ public class CalculatorTest {
                 calculator.add(4.1, (calculator.add(calculator.multiply(15, 7),
                         calculator.power(calculator.divide(28.0, 5), 2)))));
 
+    }
+
+    @Test
+    public void getCountOperationCalculatorWithCounterAutoSuperTest(){
+        CalculatorWithCounterAutoSuper calculator = new CalculatorWithCounterAutoSuper();
+        calculator.add(4.1, (calculator.add(calculator.multiply(15, 7),
+                calculator.power(calculator.divide(28.0, 5), 2))));
+        Assertions.assertEquals(
+                5,
+                calculator.getCountOperation());
+    }
+
+    @Test
+    public void getCountOperationCalculatorWithCounterAutoCompositeTest(){
+        CalculatorWithCounterAutoComposite calculator = new CalculatorWithCounterAutoComposite();
+        calculator.add(4.1, (calculator.add(calculator.multiply(15, 7),
+                calculator.power(calculator.divide(28.0, 5), 2))));
+        Assertions.assertEquals(
+                5,
+                calculator.getCountOperation());
+    }
+
+    @Test
+    public void getCountOperationCalculatorWithCounterAutoChoiceAggregationTest(){
+        CalculatorWithCounterAutoChoiceAggregation calculator =
+                new CalculatorWithCounterAutoChoiceAggregation(new CalculatorWithMathExtends());
+        calculator.add(4.1, (calculator.add(calculator.multiply(15, 7),
+                calculator.power(calculator.divide(28.0, 5), 2))));
+        Assertions.assertEquals(
+                5,
+                calculator.getCountOperation());
+    }
+
+    @Test
+    public void getCountOperationCalculatorWithCounterAutoAggregationTest(){
+        CalculatorWithCounterAutoAggregation calculator =
+                new CalculatorWithCounterAutoAggregation(new CalculatorWithMathCopy());
+        calculator.add(4.1, (calculator.add(calculator.multiply(15, 7),
+                calculator.power(calculator.divide(28.0, 5), 2))));
+        Assertions.assertEquals(
+                5,
+                calculator.getCountOperation());
     }
 }
