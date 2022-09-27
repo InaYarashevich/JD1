@@ -3,44 +3,59 @@ package home_work_3.calcs.additional;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
-    private long count;
+    private int count;
 
-    public long getCountOperation() {
-        return count;
+    @Override
+    public double power(double a, int b) {
+        incrementCountOperation();
+        return super.power(a, b);
     }
 
-    public double subtract(double x, double y) {
-        count++;
-        return super.subtract(x, y);
+    @Override
+    public double absoluteValue(double a) {
+        incrementCountOperation();
+        return super.absoluteValue(a);
     }
 
-    public double multiply(double x, double y) {
-        count++;
-        return super.multiply(x, y);
+    @Override
+    public double squareRoot(double a) {
+        incrementCountOperation();
+        return super.squareRoot(a);
     }
 
-    public double add(double x, double y) {
-        count++;
-        return super.add(x, y);
+    @Override
+    public double add(double a, double b) {
+        incrementCountOperation();
+        return super.add(a, b);
     }
 
-    public double divide(double x, double y) {
-        count++;
-        return super.divide(x, y);
+    @Override
+    public double subtract(double a, double b) {
+        incrementCountOperation();
+        return super.subtract(a, b);
     }
 
-    public double power(double number, int exponent) {
-        count++;
-        return Math.pow(number, exponent);
+    @Override
+    public double multiply(double a, double b) {
+        incrementCountOperation();
+        return super.multiply(a, b);
     }
 
-    public double absoluteValue(double number) {
-        count++;
-        return super.absoluteValue(number);
+    @Override
+    public double divide(double a, double b) {
+        incrementCountOperation();
+        return super.divide(a, b);
     }
 
-    public double squareRoot(double number) {
-        count++;
-        return super.squareRoot(number);
+    private void incrementCountOperation(){
+        incrementCountOperation(1);
+    }
+
+    private void incrementCountOperation(int count){
+        this.count += count;
+    }
+
+    public long getCountOperation(){
+        return this.count;
     }
 }
