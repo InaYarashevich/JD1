@@ -4,7 +4,7 @@ import home_work_2.loops.Task1Redone.Task1_1;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Tak1_1Test {
+public class Tak1_1Tests {
     @Test
     public void multiplyTest() {
         Assertions.assertEquals(

@@ -4,7 +4,7 @@ import home_work_2.loops.Task1Redone.Task1_5;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Task1_5Test {
+public class Task1_5Tests {
     @Test
     public void findMaxInt(){
         Assertions.assertEquals(5, Task1_5.findMaxInt(52341));
