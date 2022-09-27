@@ -5,129 +5,110 @@ import home_work_3.calcs.simple.CalculatorWithMathExtends;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoChoiceAggregation {
-    private CalculatorWithOperator calculator1;
-    private CalculatorWithMathCopy calculator2;
-    private CalculatorWithMathExtends calculator3;
-    private long count;
+    private int count;
+    private CalculatorWithOperator calc1;
+    private CalculatorWithMathCopy calc2;
+    private CalculatorWithMathExtends calc3;
 
-    public CalculatorWithCounterAutoChoiceAggregation(CalculatorWithOperator calculator1) {
-        this.calculator1 = calculator1;
+    public CalculatorWithCounterAutoChoiceAggregation(CalculatorWithOperator calc){
+        this.calc1 = calc;
     }
 
-    public CalculatorWithCounterAutoChoiceAggregation(CalculatorWithMathCopy calculator2) {
-        this.calculator2 = calculator2;
+    public CalculatorWithCounterAutoChoiceAggregation(CalculatorWithMathCopy calc){
+        this.calc2 = calc;
     }
 
-    public CalculatorWithCounterAutoChoiceAggregation(CalculatorWithMathExtends calculator3) {
-        this.calculator3 = calculator3;
+    public CalculatorWithCounterAutoChoiceAggregation(CalculatorWithMathExtends calc){
+        this.calc3 = calc;
     }
 
-    public long getCountOperation() {
-        return count;
+    public double add(double a, double b){
+        incrementCountOperation();
+        if(this.calc1 != null){
+            return this.calc1.add(a, b);
+        } else if(this.calc2 != null){
+            return this.calc2.add(a, b);
+        } else {
+            return this.calc3.add(a, b);
+        }
     }
 
-    public double subtract1(double x, double y) {
-        count++;
-        return calculator1.subtract(x, y);
+    public double subtract(double a, double b){
+        incrementCountOperation();
+        if(this.calc1 != null){
+            return this.calc1.subtract(a, b);
+        } else if(this.calc2 != null){
+            return this.calc2.subtract(a, b);
+        } else {
+            return this.calc3.subtract(a, b);
+        }
     }
 
-    public double multiply1(double x, double y) {
-        count++;
-        return calculator1.multiply(x, y);
+    public double multiply(double a, double b){
+        incrementCountOperation();
+        if(this.calc1 != null){
+            return this.calc1.multiply(a, b);
+        } else if(this.calc2 != null){
+            return this.calc2.multiply(a, b);
+        } else {
+            return this.calc3.multiply(a, b);
+        }
     }
 
-    public double add1(double x, double y) {
-        count++;
-        return calculator1.add(x, y);
+    public double divide(double a, double b){
+        incrementCountOperation();
+        if(this.calc1 != null){
+            return this.calc1.divide(a, b);
+        } else if(this.calc2 != null){
+            return this.calc2.divide(a, b);
+        } else {
+            return this.calc3.divide(a, b);
+        }
     }
 
-    public double divide1(double x, double y) {
-        count++;
-        return calculator1.divide(x, y);
+    public double power(double a, int b){
+        incrementCountOperation();
+        if(this.calc1 != null){
+            return this.calc1.power(a, b);
+        } else if(this.calc2 != null){
+            return this.calc2.power(a, b);
+        } else {
+            return this.calc3.power(a, b);
+        }
     }
 
-    public double power1(double number, int exponent) {
-        count++;
-        return calculator1.power(number, exponent);
+    public double absoluteValue(double a){
+        incrementCountOperation();
+        if(this.calc1 != null){
+            return this.calc1.absoluteValue(a);
+        } else if(this.calc2 != null){
+            return this.calc2.absoluteValue(a);
+        } else {
+            return this.calc3.absoluteValue(a);
+        }
     }
 
-    public double absoluteValue1(double number) {
-        count++;
-        return calculator1.absoluteValue(number);
+    public double squareRoot(double a){
+        incrementCountOperation();
+        if(this.calc1 != null){
+            return this.calc1.squareRoot(a);
+        } else if(this.calc2 != null){
+            return this.calc2.squareRoot(a);
+        } else {
+            return this.calc3.squareRoot(a);
+        }
     }
 
-    public double squareRoot1(double number) {
-        count++;
-        return calculator1.squareRoot(number);
+    private void incrementCountOperation(){
+        incrementCountOperation(1);
     }
 
-    public double subtract2(double x, double y) {
-        count++;
-        return calculator2.subtract(x, y);
+    private void incrementCountOperation(int count){
+        this.count += count;
     }
 
-    public double multiply2(double x, double y) {
-        count++;
-        return calculator2.multiply(x, y);
+    public long getCountOperation(){
+        return this.count;
     }
 
-    public double add2(double x, double y) {
-        count++;
-        return calculator2.add(x, y);
-    }
-
-    public double divide2(double x, double y) {
-        count++;
-        return calculator2.divide(x, y);
-    }
-
-    public double power2(double number, int exponent) {
-        count++;
-        return calculator2.power(number, exponent);
-    }
-
-    public double absoluteValue2(double number) {
-        count++;
-        return calculator2.absoluteValue(number);
-    }
-
-    public double squareRoot2(double number) {
-        count++;
-        return calculator2.squareRoot(number);
-    }
-
-    public double subtract3(double x, double y) {
-        count++;
-        return calculator3.subtract(x, y);
-    }
-
-    public double multiply3(double x, double y) {
-        count++;
-        return calculator3.multiply(x, y);
-    }
-
-    public double add3(double x, double y) {
-        count++;
-        return calculator3.add(x, y);
-    }
-
-    public double divide3(double x, double y) {
-        count++;
-        return calculator3.divide(x, y);
-    }
-
-    public double power3(double number, int exponent) {
-        count++;
-        return calculator3.power(number, exponent);
-    }
-
-    public double absoluteValue3(double number) {
-        count++;
-        return calculator3.absoluteValue(number);
-    }
-
-    public double squareRoot3(double number) {
-        count++;
-        return calculator3.squareRoot(number);
-    }
 }
