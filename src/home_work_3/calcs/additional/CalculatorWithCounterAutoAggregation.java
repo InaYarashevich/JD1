@@ -10,42 +10,50 @@ public class CalculatorWithCounterAutoAggregation {
         this.calculator = calculator;
     }
 
-    public long getOperationsCount() {
-        return count;
-    }
-
     public double subtract(double x, double y) {
-        count++;
+        incrementCountOperation();
         return calculator.subtract(x, y);
     }
 
     public double multiply(double x, double y) {
-        count++;
+        incrementCountOperation();
         return calculator.multiply(x, y);
     }
 
     public double add(double x, double y) {
-        count++;
+        incrementCountOperation();
         return calculator.add(x, y);
     }
 
     public double divide(double x, double y) {
-        count++;
+        incrementCountOperation();
         return calculator.divide(x, y);
     }
 
     public double power(double number, int exponent) {
-        count++;
+        incrementCountOperation();
         return calculator.power(number, exponent);
     }
 
     public double absoluteValue(double number) {
-        count++;
+        incrementCountOperation();
         return calculator.absoluteValue(number);
     }
 
     public double squareRoot(double number) {
-        count++;
+        incrementCountOperation();
         return calculator.squareRoot(number);
+    }
+
+    private void incrementCountOperation() {
+        incrementCountOperation(1);
+    }
+
+    private void incrementCountOperation(int count) {
+        this.count += count;
+    }
+
+    public long getCountOperation() {
+        return this.count;
     }
 }
