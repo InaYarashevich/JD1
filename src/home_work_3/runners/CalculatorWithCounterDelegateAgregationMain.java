@@ -13,6 +13,6 @@ public class CalculatorWithCounterDelegateAgregationMain {
 
         System.out.println("Результат выражения = " + resultFinal);
         System.out.println("Количество использований данного калькулятора = "
-                + calculator.getOperationsCount());
+                + calculator.getCountOperation());
     }
 }

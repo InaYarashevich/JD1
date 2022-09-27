@@ -14,22 +14,22 @@ public class CalculatorWithCounterDelegateChoiceAggregationMain {
         CalculatorWithCounterAutoChoiceAggregation calculator3 =
                 new CalculatorWithCounterAutoChoiceAggregation(new CalculatorWithMathExtends());
 
-        double result1 = calculator1.add1(4.1, (calculator1.add1(calculator1.multiply1(15, 7),
-                calculator1.power1(calculator1.divide1(28.0, 5), 2))));
+        double result1 = calculator1.add(4.1, (calculator1.add(calculator1.multiply(15, 7),
+                calculator1.power(calculator1.divide(28.0, 5), 2))));
 
         System.out.println("Результат выражения = " + result1);
         System.out.println("Количество использований <CalculatorWithOperator> калькулятора = "
                 + calculator1.getCountOperation());
 
-        double result2 = calculator2.add2(4.1, (calculator2.add2(calculator2.multiply2(15, 7),
-                calculator2.power2(calculator2.divide2(28.0, 5), 2))));
+        double result2 = calculator2.add(4.1, (calculator2.add(calculator2.multiply(15, 7),
+                calculator2.power(calculator2.divide(28.0, 5), 2))));
 
         System.out.println("Результат выражения = " + result2);
         System.out.println("Количество использований <CalculatorWithMathCopy> калькулятора = "
                 + calculator2.getCountOperation());
 
-        double result3 = calculator3.add3(4.1, (calculator3.add3(calculator3.multiply3(15, 7),
-                calculator3.power3(calculator3.divide3(28.0, 5), 2))));
+        double result3 = calculator3.add(4.1, (calculator3.add(calculator3.multiply(15, 7),
+                calculator3.power(calculator3.divide(28.0, 5), 2))));
 
         System.out.println("Результат выражения = " + result3);
         System.out.println("Количество использований <CalculatorWithMathExtends> калькулятора = "

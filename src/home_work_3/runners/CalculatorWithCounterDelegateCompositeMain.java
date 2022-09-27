@@ -10,6 +10,6 @@ public class CalculatorWithCounterDelegateCompositeMain {
                 calculator.power(calculator.divide(28.0, 5), 2))));
 
         System.out.println("Результат выражения = " + resultFinal);
-        System.out.printf("Операции: %d%n", calculator.getCountOperations());
+        System.out.printf("Операции: %d%n", calculator.getCountOperation());
     }
 }
