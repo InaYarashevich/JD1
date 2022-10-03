@@ -33,4 +33,12 @@ public class DoneOrder implements IDoneOrder {
     public List<IPizza> getItems() {
         return new ArrayList<>(items);
     }
+
+    @Override
+    public String toString() {
+        return "DoneOrder{" +
+                "ticket=" + ticket +
+                ", items=" + items +
+                '}';
+    }
 }

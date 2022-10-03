@@ -29,4 +29,12 @@ public class SelectedItem implements ISelectedItem {
     public int getCount() {
         return count;
     }
+
+    @Override
+    public String toString() {
+        return "SelectedItem{" +
+                "menuRow=" + menuRow +
+                ", count=" + count +
+                '}';
+    }
 }

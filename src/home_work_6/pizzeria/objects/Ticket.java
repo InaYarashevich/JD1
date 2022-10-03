@@ -43,4 +43,13 @@ public class Ticket implements ITicket {
     public IOrder getOrder() {
         return order;
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "number='" + number + '\'' +
+                ", createAt=" + createAt +
+                ", order=" + order +
+                '}';
+    }
 }

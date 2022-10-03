@@ -21,4 +21,11 @@ public class Order implements IOrder {
     public List<ISelectedItem> getSelected() {
         return new ArrayList<>(selectedItem);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "selectedItem=" + selectedItem +
+                '}';
+    }
 }
