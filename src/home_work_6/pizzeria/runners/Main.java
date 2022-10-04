@@ -49,8 +49,6 @@ public class Main {
                 ticket,
                 orderStatus,
                 doneOrder);
-
-
         System.out.println("Заказ создан и выдан квиток: " + pizzeria.create(order));
         System.out.println("Информация о стадии приготовления: " + pizzeria.check(ticket));
     }

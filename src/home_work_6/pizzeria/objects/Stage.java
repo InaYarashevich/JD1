@@ -28,9 +28,6 @@ public class Stage implements IStage {
 
     @Override
     public String toString() {
-        return "Stage{" +
-                "description='" + description + '\'' +
-                ", time=" + time +
-                '}';
+        return description + time;
     }
 }
