@@ -8,12 +8,12 @@ import java.time.LocalDateTime;
 
 public class Ticket implements ITicket {
     private String number;
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
     private Order order;
 
-    public Ticket(String number, LocalDateTime createAt, Order order) {
+    public Ticket(String number, LocalDateTime createdAt, Order order) {
         this.number = number;
-        this.createAt = createAt;
+        this.createdAt = createdAt;
         this.order = order;
     }
 
@@ -21,8 +21,8 @@ public class Ticket implements ITicket {
         this.number = number;
     }
 
-    public void setCreateAt(LocalDateTime createAt) {
-        this.createAt = createAt;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public void setOrder(Order order) {
@@ -35,8 +35,8 @@ public class Ticket implements ITicket {
     }
 
     @Override
-    public LocalDateTime getCreateAt() {
-        return createAt;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Ticket implements ITicket {
     public String toString() {
         return "Ticket{" +
                 "number='" + number + '\'' +
-                ", createAt=" + createAt +
+                ", createdAt=" + createdAt +
                 ", order=" + order +
                 '}';
     }

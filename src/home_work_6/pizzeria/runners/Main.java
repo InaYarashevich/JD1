@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         List<Pizza> pizzaList = new ArrayList<>();
         pizzaList.add(new Pizza("Ранч пицца", 1));
-        pizzaList.add(new Pizza("Баварская", 2));
+        pizzaList.add(new Pizza("Баварская", 1));
         pizzaList.add( new Pizza("Гавайская", 1));
         Menu menu = new Menu(pizzaList);
 
@@ -21,7 +21,8 @@ public class Main {
                         new PizzaInfo(
                                 1,
                                 "Баварская",
-                        "сладкий горчичный соус, охотничьи колбаски, свежие шампиньоны, свежий лук, свежие томаты, сыр моцарелла, базилик"),
+                        "сладкий горчичный соус, охотничьи колбаски, свежие шампиньоны," +
+                                "свежий лук, свежие томаты, сыр моцарелла, базилик"),
                 10.00), 1);
 
         List<SelectedItem> items = new ArrayList<>();
@@ -51,5 +52,6 @@ public class Main {
                 doneOrder);
         System.out.println("Заказ создан и выдан квиток: " + pizzeria.create(order));
         System.out.println("Информация о стадии приготовления: " + pizzeria.check(ticket));
+        System.out.println("Готовый заказ: " + doneOrder);
     }
 }
