@@ -1,40 +1,47 @@
 package home_work_6.pizzeria.runners;
 
 
+import home_work_6.pizzeria.api.IStage;
 import home_work_6.pizzeria.objects.*;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите название пиццы: ");
-        String name = scanner.next();
-        System.out.println("Введите размер пиццы: ");
-        int size = Integer.parseInt(scanner.next());
-        System.out.println("Состав пиццы: ");
-        String description = scanner.next();
-
-
-
-        List<SelectedItem> pizzas = new ArrayList<>();
-        pizzas.add(new SelectedItem(
-                        new MenuRow(
-                                new PizzaInfo(
-                                        size, name, description
-                                ), 25.00
-                        ),1));
-        Order order = new Order(pizzas);
         List<Pizza> pizzaList = new ArrayList<>();
-        pizzaList.add(0, new Pizza(name, size));
-        Ticket ticket = new Ticket("2",LocalDateTime.now(), order);
+        pizzaList.add(new Pizza("Ранч пицца", 1));
+        pizzaList.add(new Pizza("Баварская", 2));
+        pizzaList.add( new Pizza("Гавайская", 1));
+        Menu menu = new Menu(pizzaList);
+
+        SelectedItem selectedItem = new SelectedItem(
+                new MenuRow(
+                        new PizzaInfo(
+                                1,
+                                "Баварская",
+                        "сладкий горчичный соус, охотничьи колбаски, свежие шампиньоны, свежий лук, свежие томаты, сыр моцарелла, базилик"),
+                10.00), 1);
+
+        List<SelectedItem> items = new ArrayList<>();
+        items.add(selectedItem);
+
+        Order order = new Order(items);
+        
+        Ticket ticket = new Ticket("2", LocalDateTime.now(), order);
+
+        Stage stage1 = new Stage("Заказ принят ", IStage.getTime());
+        Stage stage2 = new Stage("Начато приготовление пиццы ", IStage.getTime());
+        Stage stage3 = new Stage("Заказ пакуется ", IStage.getTime());
+        Stage stage4 = new Stage("Заказ готов ", IStage.getTime());
+
         List<Stage> stages = new ArrayList<>();
-        stages.add(new Stage("Заказ принят", LocalTime.now()));
+        stages.add(stage1);
+        stages.add(stage2);
+        stages.add(stage3);
+        stages.add(stage4);
+
         OrderStatus orderStatus = new OrderStatus(stages, false, ticket);
         DoneOrder doneOrder = new DoneOrder(ticket, pizzaList);
 
@@ -44,8 +51,7 @@ public class Main {
                 doneOrder);
 
 
-        System.out.println(pizzeria.create(order));
-
-
+        System.out.println("Заказ создан и выдан квиток: " + pizzeria.create(order));
+        System.out.println("Информация о стадии приготовления: " + pizzeria.check(ticket));
     }
 }

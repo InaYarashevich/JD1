@@ -39,7 +39,6 @@ public class Pizzeria implements IPizzeria {
 
     @Override
     public ITicket create(IOrder order) {
-
         return ticket;
     }
 
@@ -51,7 +50,6 @@ public class Pizzeria implements IPizzeria {
 
     @Override
     public IDoneOrder pickup(ITicket ticket) {
-
         return doneOrder;
     }
 

@@ -27,11 +27,6 @@ public class Stage implements IStage {
     }
 
     @Override
-    public LocalTime getTime() {
-        return time;
-    }
-
-    @Override
     public String toString() {
         return "Stage{" +
                 "description='" + description + '\'' +
