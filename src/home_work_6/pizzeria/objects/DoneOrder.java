@@ -8,21 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoneOrder implements IDoneOrder {
-    private Ticket ticket;
-    private List<Pizza> items;
+    private ITicket ticket;
+    private List<IPizza> items;
 
-    public DoneOrder(Ticket ticket, List<Pizza> pizzas) {
-        this.ticket = ticket;
-        this.items = pizzas;
-    }
-
-    public void setTicket(Ticket ticket) {
-        this.ticket = ticket;
-    }
-
-    public void setPizzas(List<Pizza> pizzas) {
-        this.items = pizzas;
-    }
 
     @Override
     public ITicket getTicket() {
@@ -31,14 +19,6 @@ public class DoneOrder implements IDoneOrder {
 
     @Override
     public List<IPizza> getItems() {
-        return new ArrayList<>(items);
-    }
-
-    @Override
-    public String toString() {
-        return "DoneOrder{" +
-                "ticket=" + ticket +
-                ", items=" + items +
-                '}';
+        return items;
     }
 }

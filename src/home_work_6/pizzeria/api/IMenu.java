@@ -11,5 +11,5 @@ public interface IMenu {
      * Доступные к заказу пиццы
      * @return описания пицц, которые можно заказать
      */
-    List<IPizza> getItems();
+    List<IMenuRow> getItems();
 }

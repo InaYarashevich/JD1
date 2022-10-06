@@ -2,21 +2,21 @@ package home_work_6.pizzeria.objects;
 
 import home_work_6.pizzeria.api.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class OrderStatus implements IOrderStatus {
-    private List<Stage> stages;
+    private List<IStage> stages;
     private boolean isDone;
-    private Ticket ticket;
+    private ITicket ticket;
 
-    public OrderStatus(List<Stage> stages, boolean isDone, Ticket ticket){
+    public OrderStatus(List<IStage> stages, boolean isDone, ITicket ticket){
         this.stages = stages;
         this.isDone = isDone;
         this.ticket = ticket;
     }
+    public OrderStatus(){}
 
-    public void setStage(List<Stage> theStages){
+    public void setStage(List<IStage> theStages){
         this.stages = theStages;
     }
 
@@ -24,13 +24,17 @@ public class OrderStatus implements IOrderStatus {
         this.isDone = isDone;
     }
 
-    public void setTicket(Ticket theTicket){
+    public void setTicket(ITicket theTicket){
         this.ticket = theTicket;
     }
 
     @Override
     public List<IStage> getHistory() {
-        return new ArrayList<>(stages);
+        stages.add(new Stage("Заказ принят"));
+        stages.add(new Stage("Начато приготовление пиццы"));
+        stages.add(new Stage("Заказ пакуется"));
+        stages.add(new Stage("Заказ готов"));
+        return stages;
     }
 
     @Override

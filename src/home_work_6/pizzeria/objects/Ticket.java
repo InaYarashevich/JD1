@@ -2,6 +2,7 @@ package home_work_6.pizzeria.objects;
 
 import home_work_6.pizzeria.api.IOrder;
 import home_work_6.pizzeria.api.ITicket;
+import home_work_6.pizzeria.supplier.RandomUUIDSupplier;
 
 import java.time.LocalDateTime;
 
@@ -9,9 +10,14 @@ import java.time.LocalDateTime;
 public class Ticket implements ITicket {
     private String number;
     private LocalDateTime createdAt;
-    private Order order;
+    private IOrder order;
 
-    public Ticket(String number, LocalDateTime createdAt, Order order) {
+    public Ticket(String number, IOrder order) {
+        this.number = number;
+        this.createdAt = LocalDateTime.now();
+        this.order = order;
+    }
+    public Ticket(String number, LocalDateTime createdAt, IOrder order) {
         this.number = number;
         this.createdAt = createdAt;
         this.order = order;
@@ -25,12 +31,14 @@ public class Ticket implements ITicket {
         this.createdAt = createdAt;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(IOrder order) {
         this.order = order;
     }
 
     @Override
     public String getNumber() {
+        RandomUUIDSupplier randomUUIDSupplier = new RandomUUIDSupplier();
+        number = randomUUIDSupplier.get();
         return number;
     }
 

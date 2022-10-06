@@ -31,8 +31,7 @@ public class Pizza implements IPizza {
 
     @Override
     public String toString() {
-        return "Pizza{" +
-                "name='" + name + '\'' +
+        return name + '\'' +
                 ", size=" + size +
                 '}';
     }

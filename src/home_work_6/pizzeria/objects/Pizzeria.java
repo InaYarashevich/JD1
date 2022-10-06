@@ -1,66 +1,58 @@
 package home_work_6.pizzeria.objects;
 
 import home_work_6.pizzeria.api.*;
+import home_work_6.pizzeria.supplier.RandomUUIDSupplier;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Supplier;
 
 
 public class Pizzeria implements IPizzeria {
-    private Menu menu;
-    private Ticket ticket;
-    private OrderStatus orderStatus;
-    private DoneOrder doneOrder;
+    private IMenu menu;
+    private Supplier<String> numberGenerator;
+    private Map<ITicket, IDoneOrder> orders = new HashMap<>();
 
-    public Pizzeria(Menu menu, Ticket ticket,
-                    OrderStatus orderStatus, DoneOrder doneOrder) {
-        this.menu = menu;
-        this.ticket = ticket;
-        this.orderStatus = orderStatus;
-        this.doneOrder = doneOrder;
+    public Pizzeria(List<IMenuRow> rows) {
+        this.menu = new Menu(rows);
+        this.numberGenerator = new RandomUUIDSupplier();
     }
 
-    public void setMenu(Menu theMenu) {
-        this.menu = theMenu;
-    }
-
-    public void setTicket(Ticket theTicket) {
-        this.ticket = theTicket;
-    }
-
-    public void setOrderStatus(OrderStatus theOrderStatus) {
-        this.orderStatus = theOrderStatus;
-    }
-
-    public void setDoneOrder(DoneOrder theDoneOrder) {
-        this.doneOrder = theDoneOrder;
-    }
 
     @Override
     public IMenu takeMenu() {
-        return menu;
+        return this.menu;
     }
 
     @Override
     public ITicket create(IOrder order) {
+        String number = null;
+        do{
+            number = numberGenerator.get();
+            for (ITicket iTicket : this.orders.keySet()) {
+                if(number.equals(iTicket.getNumber())){
+                    number = null;
+                    break;
+                }
+            }
+        } while (number == null);
+
+        Ticket ticket = new Ticket(number, order);
+
+        this.orders.put(ticket, null);
+
         return ticket;
     }
 
     @Override
     public IOrderStatus check(ITicket ticket) {
 
-        return orderStatus;
+        return new OrderStatus();
     }
 
     @Override
     public IDoneOrder pickup(ITicket ticket) {
-        return doneOrder;
-    }
-
-    @Override
-    public String toString() {
-        return "Pizzeria{" +
-                "menu=" + menu +
-                ", ticket=" + ticket +
-                ", orderStatus=" + orderStatus +
-                ", doneOrder=" + doneOrder +
-                '}';
+        return null;
     }
 }

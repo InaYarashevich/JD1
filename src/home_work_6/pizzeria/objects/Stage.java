@@ -13,6 +13,11 @@ public class Stage implements IStage {
         this.time = time;
     }
 
+    public Stage(String description) {
+        this.description = description;
+        this.time = LocalTime.now();
+    }
+
     public void setDescription(String theDescription) {
         this.description = theDescription;
     }

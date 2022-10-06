@@ -7,19 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements IOrder {
-    private List<SelectedItem> selectedItem;
+    private List<ISelectedItem> selectedItem;
 
-    public Order(List<SelectedItem> selectedItem) {
+    public Order(List<ISelectedItem> selectedItem) {
         this.selectedItem = selectedItem;
     }
 
-    public void setSelectedItem(List<SelectedItem> theSelectedItem){
+    public void setSelectedItem(List<ISelectedItem> theSelectedItem){
         this.selectedItem = theSelectedItem;
     }
 
     @Override
     public List<ISelectedItem> getSelected() {
-        return new ArrayList<>(selectedItem);
+        return selectedItem;
     }
 
     @Override

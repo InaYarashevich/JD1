@@ -3,11 +3,11 @@ package home_work_6.pizzeria.objects;
 import home_work_6.pizzeria.api.IPizzaInfo;
 
 public class PizzaInfo implements IPizzaInfo {
-    private int size;
     private String name;
+    private int size;
     private String description;
 
-    public PizzaInfo(int size, String name, String description) {
+    public PizzaInfo(String name, String description, int size) {
         this.size = size;
         this.description = description;
         this.name = name;
@@ -42,8 +42,8 @@ public class PizzaInfo implements IPizzaInfo {
 
     @Override
     public String toString() {
-        return '{' + "name='" + this.name + "\'" +
-                ", description='" + this.description + "\'" +
-                ", size=" + this.size + '}';
+        return this.name +
+                ", Ingredients: '" + this.description + "\'" +
+                ", Size: " + this.size;
     }
 }

@@ -32,9 +32,8 @@ public class MenuRow implements IMenuRow {
 
     @Override
     public String toString() {
-        return "MenuRow{" +
-                "pizzaInfo=" + pizzaInfo +
-                ", price=" + price +
-                '}';
+
+        return '\n' + "Pizza: " + pizzaInfo +
+                ", Price: " + price + " BYN";
     }
 }

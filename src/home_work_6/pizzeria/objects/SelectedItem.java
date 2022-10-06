@@ -4,15 +4,15 @@ import home_work_6.pizzeria.api.IMenuRow;
 import home_work_6.pizzeria.api.ISelectedItem;
 
 public class SelectedItem implements ISelectedItem {
-    private MenuRow menuRow;
+    private IMenuRow menuRow;
     private int count;
 
-    public SelectedItem(MenuRow menuRow, int count){
+    public SelectedItem(IMenuRow menuRow, int count){
         this.menuRow = menuRow;
         this.count = count;
     }
 
-    public void setMenuRow(MenuRow theMenuRow){
+    public void setMenuRow(IMenuRow theMenuRow){
         this.menuRow = theMenuRow;
     }
 
