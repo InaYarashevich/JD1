@@ -1,6 +1,7 @@
 package home_work_6.pizzeria.objects;
 
 import home_work_6.pizzeria.api.*;
+import home_work_6.pizzeria.job.MakePizzaJob;
 import home_work_6.pizzeria.supplier.RandomUUIDSupplier;
 
 import java.util.HashMap;
@@ -41,6 +42,8 @@ public class Pizzeria implements IPizzeria {
         Ticket ticket = new Ticket(number, order);
 
         this.orders.put(ticket, null);
+        Runnable job = new MakePizzaJob();
+        job.run();
 
         return ticket;
     }

@@ -13,6 +13,8 @@ public class Order implements IOrder {
         this.selectedItem = selectedItem;
     }
 
+    public Order(){}
+
     public void setSelectedItem(List<ISelectedItem> theSelectedItem){
         this.selectedItem = theSelectedItem;
     }
@@ -24,8 +26,6 @@ public class Order implements IOrder {
 
     @Override
     public String toString() {
-        return "Order{" +
-                "selectedItem=" + selectedItem +
-                '}';
+        return "Order: " + selectedItem;
     }
 }
