@@ -6,13 +6,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegExSearch implements ISearchEngine {
+    private static final String REGEX = "[a-zA-Z]+";
+
     @Override
     public long search(String text, String word) {
         long count = 0;
         String[] words = text.split("[, ;.!]+");
-        Pattern pattern = Pattern.compile("[a-zA-Z0-9]+");
+        Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(word);
-        for (int i = 0; i < text.length(); i++) {
+
+        for (int i = 0; i < words.length; i++) {
             if (matcher.matches()){
                 count++;
             }
