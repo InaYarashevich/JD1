@@ -15,11 +15,11 @@ import static home_work_7.task2.Task2_2.*;
 
 public class Main {
     public static void main(String[] args) {
-        //String text = ReadFile.read("Война_и_мир.txt");
-        String text = "mama mama mila ramy mama";
+        String text = ReadFile.read("Война_и_мир.txt");
+        //String text = "mama mama mila ramy mama";
 
         RegExSearch regExSearch = new RegExSearch();
-        System.out.println("Количество встречающихся слов: " + regExSearch.search(text, "mama"));
+        System.out.println("Количество встречающихся слов: " + regExSearch.search(text, "мир"));
 
         //Set<String> stringSet = createSetFromString(text);
         //Map<String, Integer> result = createMapFromString(text);
