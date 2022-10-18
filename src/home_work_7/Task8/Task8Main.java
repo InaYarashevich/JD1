@@ -5,11 +5,13 @@ import home_work_7.Task7.ScanFolder;
 import home_work_7.utils.ReadFile;
 import home_work_7.utils.WriteIntoFile;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.*;
 
 public class Task8Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
         EasySearch easySearch = new EasySearch();
 
@@ -19,20 +21,19 @@ public class Task8Main {
 
         System.out.println("Введите искомое слово: ");
         String word = scanner.next();
-        String text = null;
 
-        for (int i = 0; i < ScanFolder.getFiles(path).size(); i++) {
-            text = ScanFolder.getFiles(path).get(i);
+        List<String> files = ScanFolder.getFiles(path);
+        List<String> texts = new ArrayList<>();
+
+        for (int i = 0; i < files.size(); i++) {
+            texts.add(ReadFile.read(path + "\\" + files.get(i)));
         }
-        String finalText = text;
-        String word1 = word;
 
-        Callable<Long> callableTask = () -> easySearch.search(finalText, word1);
+        Callable<Long> callableTask = () -> easySearch.search(texts.get(0), word);
 
-        Future<Long> future =
-                executorService.submit(callableTask);
+        Future<Long> future = executorService.submit(callableTask);
 
-        WriteIntoFile.writeIntoFile(finalText + " - " + word + " - " + future, "result.txt");
+        WriteIntoFile.writeIntoFile(files + " - " + word + " - " + future.get(), "result.txt");
 
         executorService.shutdown();
     }
