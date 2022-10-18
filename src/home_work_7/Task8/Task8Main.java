@@ -44,6 +44,7 @@ public class Task8Main {
 
                 WriteIntoFile.writeIntoFile(files.get(i) + " - " + word + " - " + futures.get(i).get(), "result.txt");
             }
+
             System.out.println("0 - продолжить поиск в текущем файле;\n1 - завершить поиск в текущем файле;");
             choice = scanner.nextInt();
         } while (choice != 1);
