@@ -9,7 +9,7 @@ public abstract class WriteIntoFile {
         try {
             FileWriter fileWriter = new FileWriter(file, true);
             BufferedWriter out = new BufferedWriter(fileWriter);
-            out.write(text + " ");
+            out.write(text);
             out.newLine();
             out.close();
         } catch (IOException e) {
