@@ -10,9 +10,9 @@ public class RegExSearch implements ISearchEngine {
     public long search(String text, String word) {
         long count = 0;
         String[] words = text.split("[, ;.!]+");
-        Pattern pattern = Pattern.compile("мама");
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9]+");
         Matcher matcher = pattern.matcher(word);
-        for (int i = 0; i < words.length; i++) {
+        for (int i = 0; i < text.length(); i++) {
             if (matcher.matches()){
                 count++;
             }
