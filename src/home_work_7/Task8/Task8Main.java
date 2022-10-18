@@ -24,17 +24,17 @@ public class Task8Main {
 
         List<String> files = ScanFolder.getFiles(path);
         List<String> texts = new ArrayList<>();
-
         for (int i = 0; i < files.size(); i++) {
+            int iter = i;
             texts.add(ReadFile.read(path + "\\" + files.get(i)));
+            Callable<Long> callableTask = () -> easySearch.search(texts.get(iter), word);
+            List<Callable<Long>> callables = new ArrayList<>();
+            for (int j = 0; j < files.size(); j++) {
+                callables.add(callableTask);
+            }
+            List<Future<Long>> futures = executorService.invokeAll(callables);
+            WriteIntoFile.writeIntoFile(files.get(i) + " - " + word + " - " + futures.get(i).get(), "result.txt");
         }
-
-        Callable<Long> callableTask = () -> easySearch.search(texts.get(0), word);
-
-        Future<Long> future = executorService.submit(callableTask);
-
-        WriteIntoFile.writeIntoFile(files + " - " + word + " - " + future.get(), "result.txt");
-
         executorService.shutdown();
     }
 }

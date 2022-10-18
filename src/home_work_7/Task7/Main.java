@@ -6,7 +6,7 @@ import home_work_7.utils.WriteIntoFile;
 
 import java.util.Scanner;
 
-public class LibraryMain {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
