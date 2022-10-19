@@ -1,8 +1,8 @@
 package home_work_7.Task8;
 
-import home_work_7.Task4.EasySearch;
-import home_work_7.Task7.ScanFolder;
-import home_work_7.utils.ReadFile;
+import home_work_7.dto.EasySearch;
+import home_work_7.utils.ReadDirectory;
+import home_work_7.utils.ReadFromFile;
 import home_work_7.utils.WriteIntoFile;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class Task8Main {
         String path = scanner.next();
 
 
-        List<String> files = ScanFolder.getFiles(path);
+        List<String> files = ReadDirectory.getFiles(path);
         List<String> texts = new ArrayList<>();
         int choice = 0;
 
@@ -30,7 +30,7 @@ public class Task8Main {
 
             for (int i = 0; i < files.size(); i++) {
                 int iter = i;
-                texts.add(ReadFile.read(path + "/" + files.get(i)));
+                texts.add(ReadFromFile.read(path + "/" + files.get(i)));
 
                 Callable<Long> callableTask = () -> easySearch.search(texts.get(iter), word);
 

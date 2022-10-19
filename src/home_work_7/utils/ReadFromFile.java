@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public abstract class ReadFile {
+public abstract class ReadFromFile {
     public static String read(String fileName) {
         StringBuilder stringBuilder = new StringBuilder();
         try {

@@ -1,6 +1,6 @@
-package home_work_7.Task4;
+package home_work_7.dto;
 
-import home_work_7.Task3.api.ISearchEngine;
+import home_work_7.api.ISearchEngine;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

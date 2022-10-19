@@ -1,10 +1,10 @@
-package home_work_7.Task7;
+package home_work_7.utils;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScanFolder {
+public class ReadDirectory {
     public static List<String> getFiles(String path) {
         List<String> files = new ArrayList<>();
         File directory = new File(path);

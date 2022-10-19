@@ -1,12 +1,12 @@
-package home_work_7.Task5;
+package home_work_7;
 
-import home_work_7.Task4.EasySearch;
-import home_work_7.utils.ReadFile;
+import home_work_7.dto.EasySearch;
+import home_work_7.utils.ReadFromFile;
 
-public class Task5_1 {
+public class Task5_1Main {
     public static void main(String[] args) {
         EasySearch easySearch = new EasySearch();
-        String text = ReadFile.read("Война_и_мир.txt");
+        String text = ReadFromFile.read("Война_и_мир.txt");
 
         System.out.println(String.format(
                 "Слово <война> используется <%s> раз в тексте.",

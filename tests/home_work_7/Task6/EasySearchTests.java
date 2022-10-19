@@ -1,6 +1,6 @@
 package home_work_7.Task6;
 
-import home_work_7.Task4.EasySearch;
+import home_work_7.dto.EasySearch;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

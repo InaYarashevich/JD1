@@ -1,7 +1,8 @@
 package home_work_7.Task7;
 
-import home_work_7.Task4.EasySearch;
-import home_work_7.utils.ReadFile;
+import home_work_7.dto.EasySearch;
+import home_work_7.utils.ReadFromFile;
+import home_work_7.utils.ReadDirectory;
 import home_work_7.utils.WriteIntoFile;
 
 import java.util.Scanner;
@@ -13,8 +14,8 @@ public class Main {
         System.out.println("Введите адрес папки: ");
         String path = scanner.next();
 
-        ScanFolder scanFolder = new ScanFolder();
-        System.out.println("Файлы: " + scanFolder.getFiles(path));
+        ReadDirectory readDirectory = new ReadDirectory();
+        System.out.println("Файлы: " + readDirectory.getFiles(path));
 
         EasySearch easySearch = new EasySearch();
         int choice = 0;
@@ -24,7 +25,7 @@ public class Main {
         do {
             System.out.println("Выберите файл: ");
             String selectedFile = scanner.next();
-            String text = ReadFile.read(path + "\\" + selectedFile);
+            String text = ReadFromFile.read(path + "\\" + selectedFile);
             do {
                 System.out.println("Введите искомое слово: ");
                 word = scanner.next();
@@ -49,7 +50,7 @@ public class Main {
             }
 
             if (fileChoice == 0){
-                System.out.println("Файлы: " + scanFolder.getFiles(path));
+                System.out.println("Файлы: " + readDirectory.getFiles(path));
             }
         } while (fileChoice != 1);
     }
