@@ -14,7 +14,10 @@ public class Task2_1 {
 
         for (int i = 0; i < words.length; i++) {
             words[i] = words[i].replaceAll("[()\",:;.!?]+", "");
-            words[i] = words[i].replace("-", "");
+           
+            if (words[i].startsWith("-")) {
+                words[i] = words[i].replaceAll("-", ""); //TODO
+            }
 
             resultSet.add(words[i]);
         }

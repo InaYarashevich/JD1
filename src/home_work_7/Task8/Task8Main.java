@@ -30,7 +30,7 @@ public class Task8Main {
 
             for (int i = 0; i < files.size(); i++) {
                 int iter = i;
-                texts.add(ReadFile.read(path + "\\" + files.get(i)));
+                texts.add(ReadFile.read(path + "/" + files.get(i)));
 
                 Callable<Long> callableTask = () -> easySearch.search(texts.get(iter), word);
 

@@ -18,14 +18,14 @@ public class Main {
         String text = ReadFile.read("Война_и_мир.txt");
         //String text = "mama mama mila ramy mama";
 
-        RegExSearch regExSearch = new RegExSearch();
-        System.out.println("Количество встречающихся слов: " + regExSearch.search(text, "мир"));
+        //RegExSearch regExSearch = new RegExSearch();
+        //System.out.println("Количество встречающихся слов: " + regExSearch.search(text, "мир"));
 
-        //Set<String> stringSet = createSetFromString(text);
+        Set<String> stringSet = createSetFromString(text);
         //Map<String, Integer> result = createMapFromString(text);
 
         //System.out.println("Количество слов в тексте: " + getCountWords(stringSet));
-        //System.out.println("Set<String>: " + stringSet);
+        System.out.println("Set<String>: " + stringSet);
         //System.out.println("Map<String, Integer>: " + result);
         //System.out.println("Отсортированный по количеству использования слов List: " + sortListInDescendingOrder(createListFromMapValues(result)));
         //System.out.println(sortListInDescendingOrder(createListFromMapValues(wordsMap)));

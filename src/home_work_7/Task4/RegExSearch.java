@@ -14,9 +14,12 @@ public class RegExSearch implements ISearchEngine {
         Pattern pattern = Pattern.compile(REGEX);
         Matcher matcher = pattern.matcher(word);
 
-        while(matcher.find()){
-            count++;
-        }
+        do{
+          if (matcher.matches()) {
+              count++;
+          }
+
+        }while(matcher.start() != matcher.end());
         return count;
     }
 }
