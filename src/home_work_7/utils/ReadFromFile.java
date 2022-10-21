@@ -5,6 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public abstract class ReadFromFile {
+    /**
+     * метод чтения текста из файла
+     *
+     * @param fileName - имя файла, из которого будет читаться содержимое
+     * @return содержимое файла в виде String
+     */
     public static String read(String fileName) {
         StringBuilder stringBuilder = new StringBuilder();
         try {

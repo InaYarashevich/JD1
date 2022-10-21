@@ -33,7 +33,6 @@ public class EasySearchTests {
         );
     }
 
-
     @Test
     public void searchThroughSplitsTest(){
         EasySearch easySearch = new EasySearch();
