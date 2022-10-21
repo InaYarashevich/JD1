@@ -45,6 +45,13 @@ public class EasySearch implements ISearchEngine {
         return count;
     }
 
+    /**
+     * метод возвращает результат поиска слова в тексте книги
+     * @param bookName - название книги, в которой осществлен поиск
+     * @param searchItem - слово, по которому был произведен поиск
+     * @param foundCount - количество раз, которое искомое слово встретилось в тексте книги
+     * @return - результат поиска, отражающий название книги, искомое слово и количество совпадений, разделенных тире
+     */
     public String getSearchResult(String bookName, String searchItem, long foundCount){
         return bookName + " - " + searchItem + " - " + foundCount;
     }
