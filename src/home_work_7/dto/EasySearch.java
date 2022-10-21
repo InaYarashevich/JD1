@@ -18,6 +18,14 @@ public class EasySearch implements ISearchEngine {
         int index = 0;
         long count = 0;
 
+        if (word == null || text == null) {
+            return 0;
+        }
+
+        if (word.length() > text.length()){
+            return 0;
+        }
+
         if (text.startsWith(word) && text.endsWith(word) && (word.length() == text.length())) {
             count++;
         }

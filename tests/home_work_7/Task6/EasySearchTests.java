@@ -231,4 +231,32 @@ public class EasySearchTests {
                 1, easySearch.search(text, "Pläne"), "Искомое слово не найдено в строке."
         );
     }
+
+    @Test
+    public void searchNullWordTest(){
+        EasySearch easySearch = new EasySearch();
+        String text = "Pläne Für Die Freizeit";
+        Assertions.assertEquals(
+                0, easySearch.search(text, null), "null ищется."
+        );
+    }
+
+    @Test
+    public void searchNullTextTest(){
+        EasySearch easySearch = new EasySearch();
+        String text = "";
+        Assertions.assertEquals(
+                0, easySearch.search(text, "test"), "Искомое слово найдено в пустой строке."
+        );
+    }
+
+    @Test
+    public void searchLongWordTest(){
+        EasySearch easySearch = new EasySearch();
+        String text = "test";
+        Assertions.assertEquals(
+                0, easySearch.search(text, "tests"),
+                "Слово, превышающее длину строки, найдено в строке."
+        );
+    }
 }
