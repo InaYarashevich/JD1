@@ -2,22 +2,26 @@ package home_work_7;
 
 import home_work_7.dto.EasySearch;
 import home_work_7.dto.RegExSearch;
+import home_work_7.task2.Task2_1;
 import home_work_7.utils.ReadFromFile;
+
+import java.util.Set;
 
 public class Task2And4Main {
     public static void main(String[] args) {
         String text = ReadFromFile.read("Война_и_мир.txt");
         //String text = "привет,какдела!привет,какдела!";
-        EasySearch easySearch = new EasySearch();
-        System.out.println("Количество встречающихся слов: " + easySearch.search(text, "мир"));
+        //EasySearch easySearch = new EasySearch();
+        //System.out.println("Количество встречающихся слов: " + easySearch.search(text, "мир"));
 
-        RegExSearch regExSearch = new RegExSearch();
-        System.out.println("Количество встречающихся слов: " + regExSearch.search(text, "мир"));
+        //RegExSearch regExSearch = new RegExSearch();
+        //System.out.println("Количество встречающихся слов: " + regExSearch.search(text, "мир"));
 
-        //Set<String> stringSet = createSetFromString(text);
+        Task2_1 task2_1 = new Task2_1();
+        Set<String> stringSet = task2_1.createSetFromString(text);
         //Map<String, Integer> result = createMapFromString(text);
 
-        //System.out.println("Количество слов в тексте: " + getCountWords(stringSet));
+        System.out.println("Количество слов в тексте: " + task2_1.getCountWords(stringSet));
         //System.out.println("Set<String>: " + stringSet);
         //System.out.println("Map<String, Integer>: " + result);
         //System.out.println("Отсортированный по количеству использования слов List: " + sortListInDescendingOrder(createListFromMapValues(result)));

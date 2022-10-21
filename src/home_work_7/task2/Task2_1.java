@@ -8,7 +8,13 @@ import java.util.List;
 import java.util.Set;
 
 public class Task2_1 {
-    public static Set<String> createSetFromString(String text) {
+    /**
+     * метод создания сета из переданной в параметре строки
+     *
+     * @param text - текст, из которого будет формироваться Set строк
+     * @return Set строк, сформированных из переданного текста
+     */
+    public Set<String> createSetFromString(String text) {
         Set<String> resultSet = new HashSet<String>();
         String[] words = text.split("[, ;.!]+");
 
@@ -16,7 +22,7 @@ public class Task2_1 {
             words[i] = words[i].replaceAll("[()\",:;.!?]+", "");
 
             if (words[i].startsWith("-")) {
-                words[i] = words[i].replaceAll("-", ""); //TODO
+                words[i] = words[i].replaceAll("-", "");
             }
 
             resultSet.add(words[i]);
@@ -24,7 +30,13 @@ public class Task2_1 {
         return resultSet;
     }
 
-    public static int getCountWords(Set<String> resultSet) {
+    /**
+     * метод подсчета количества уникальных слов в тексте
+     *
+     * @param resultSet - Set уникальных строк, подсчет которых будет производиться в методе
+     * @return количество уникальных слов в тексте
+     */
+    public int getCountWords(Set<String> resultSet) {
         int count = 0;
         int size = resultSet.size();
         for (int i = 0; i < size; i++) {
@@ -33,7 +45,13 @@ public class Task2_1 {
         return count;
     }
 
-    public static List<String> sortSetInAscendingOrder(Set<String> resultSet) {
+    /**
+     * метод сортирует Set строк в алфавитном порядке
+     *
+     * @param resultSet - Set строк, который будет отсортирован в методе
+     * @return отсортированный в алфавитном порядке Set строк
+     */
+    public List<String> sortSetInAscendingOrder(Set<String> resultSet) {
         ComparatorString comparator = new ComparatorString();
         List<String> words = new ArrayList<>(resultSet);
         words.sort(comparator);
