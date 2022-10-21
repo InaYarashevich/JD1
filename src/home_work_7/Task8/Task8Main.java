@@ -60,9 +60,6 @@ public class Task8Main {
                 WriteIntoFile.writeIntoFile(
                         easySearch.getSearchResult(catalog.getBooks().get(i).getName(), word, futures.get(i).get()),
                         "result.txt");
-
-               // WriteIntoFile.writeIntoFile(
-               //         catalog.getBooks().get(i).getName() + " - " + word + " - " + futures.get(i).get(), "result.txt");
             }
 
             System.out.println("0 - продолжить поиск;\n1 - завершить поиск;");
