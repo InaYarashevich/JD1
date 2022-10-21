@@ -1,5 +1,7 @@
 package home_work_7.Task8;
 
+import home_work_7.Task8.dto.Book;
+import home_work_7.Task8.dto.Catalog;
 import home_work_7.dto.EasySearch;
 import home_work_7.utils.ReadDirectory;
 import home_work_7.utils.ReadFromFile;
@@ -19,7 +21,8 @@ public class Task8Main {
         System.out.println("Введите адрес папки: ");
         String path = scanner.next();
 
-
+        //Book texts = new Book(new ArrayList<>());
+        //Catalog files = new Catalog(new ArrayList<>());
         List<String> files = ReadDirectory.getFiles(path);
         List<String> texts = new ArrayList<>();
         int choice = 0;

@@ -5,9 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public abstract class WriteIntoFile {
-    public static void writeIntoFile(String text, String file) {
+    public static void writeIntoFile(String text, String fileName) {
         try {
-            FileWriter fileWriter = new FileWriter(file, true);
+            FileWriter fileWriter = new FileWriter(fileName, true);
             BufferedWriter out = new BufferedWriter(fileWriter);
             out.write(text);
             out.newLine();

@@ -14,8 +14,7 @@ public class Main {
         System.out.println("Введите адрес папки: ");
         String path = scanner.next();
 
-        ReadDirectory readDirectory = new ReadDirectory();
-        System.out.println("Файлы: " + readDirectory.getFiles(path));
+        System.out.println("Файлы: " + ReadDirectory.getFiles(path));
 
         EasySearch easySearch = new EasySearch();
         int choice = 0;
@@ -38,7 +37,8 @@ public class Main {
                     System.out.println("0 - продолжить поиск в текущем файле;\n1 - завершить поиск в текущем файле;");
                 }
 
-                WriteIntoFile.writeIntoFile(selectedFile + " - " + word + " - " + String.valueOf(countResults), "result.txt");
+                WriteIntoFile.writeIntoFile(
+                        selectedFile + " - " + word + " - " + countResults, "result.txt");
 
             } while (choice != 1);
 
@@ -50,7 +50,7 @@ public class Main {
             }
 
             if (fileChoice == 0){
-                System.out.println("Файлы: " + readDirectory.getFiles(path));
+                System.out.println("Файлы: " + ReadDirectory.getFiles(path));
             }
         } while (fileChoice != 1);
     }
