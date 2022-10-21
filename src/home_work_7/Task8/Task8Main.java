@@ -33,7 +33,7 @@ public class Task8Main {
         for (int i = 0; i < catalogSize; i++) {
             books.add(new Book(booksNames.get(i), booksText.get(i)));
         }
-        
+
         Catalog catalog = new Catalog(books);
 
         int choice = 0;
@@ -44,7 +44,6 @@ public class Task8Main {
 
             for (int i = 0; i < catalog.getBooks().size(); i++) {
                 int iter = i;
-                booksText.add(ReadFromFile.read(path + "/" + catalog.getBooks().get(i).getName()));
 
                 Callable<Long> callableTask = () -> easySearch.search(booksText.get(iter), word);
 
