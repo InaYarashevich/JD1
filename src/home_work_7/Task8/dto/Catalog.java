@@ -18,14 +18,6 @@ public class Catalog {
         this.books = books;
     }
 
-    public List<Book> createBooksCatalog(int size, Book book){
-        List<Book> books = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            books.add(new Book(book.getName(), book.getText()));
-        }
-        return books;
-    }
-
     @Override
     public String toString() {
         return "Catalog{" +
