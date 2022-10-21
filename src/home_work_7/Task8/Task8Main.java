@@ -21,15 +21,18 @@ public class Task8Main {
         System.out.println("Введите адрес папки: ");
         String path = scanner.next();
 
+
+        int catalogSize = ReadDirectory.getFiles(path).size();
         List<String> booksNames = ReadDirectory.getFiles(path);
         List<String> booksText = new ArrayList<>();
 
 
-        for (int i = 0; i < booksNames.size(); i++) {
+        for (int i = 0; i < catalogSize; i++) {
             booksText.add(ReadFromFile.read(path + "/" + booksNames.get(i)));
         }
 
         List<Book> books = new ArrayList<>();
+
         for (int i = 0; i < booksNames.size(); i++) {
             books.add(new Book(booksNames.get(i), booksText.get(i)));
         }
