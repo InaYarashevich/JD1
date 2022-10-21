@@ -25,7 +25,7 @@ public class Main {
         do {
             System.out.println("Выберите файл: ");
             String selectedFile = scanner.next();
-            String text = ReadFromFile.read(path + "\\" + selectedFile);
+            String text = ReadFromFile.read(path + "/" + selectedFile);
             do {
                 System.out.println("Введите искомое слово: ");
                 word = scanner.next();
