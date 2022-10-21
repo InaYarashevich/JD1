@@ -21,31 +21,42 @@ public class Task8Main {
         System.out.println("Введите адрес папки: ");
         String path = scanner.next();
 
-        //Book texts = new Book(new ArrayList<>());
-        //Catalog files = new Catalog(new ArrayList<>());
-        List<String> files = ReadDirectory.getFiles(path);
-        List<String> texts = new ArrayList<>();
+        List<String> booksNames = ReadDirectory.getFiles(path);
+        List<String> booksText = new ArrayList<>();
+
+
+        for (int i = 0; i < booksNames.size(); i++) {
+            booksText.add(ReadFromFile.read(path + "/" + booksNames.get(i)));
+        }
+
+        List<Book> books = new ArrayList<>();
+        for (int i = 0; i < booksNames.size(); i++) {
+            books.add(new Book(booksNames.get(i), booksText.get(i)));
+        }
+        Catalog catalog = new Catalog(books);
+
         int choice = 0;
 
         do {
             System.out.println("Введите искомое слово: ");
             String word = scanner.next();
 
-            for (int i = 0; i < files.size(); i++) {
+            for (int i = 0; i < catalog.getBooks().size(); i++) {
                 int iter = i;
-                texts.add(ReadFromFile.read(path + "/" + files.get(i)));
+                booksText.add(ReadFromFile.read(path + "/" + catalog.getBooks().get(i).getName()));
 
-                Callable<Long> callableTask = () -> easySearch.search(texts.get(iter), word);
+                Callable<Long> callableTask = () -> easySearch.search(booksText.get(iter), word);
 
                 List<Callable<Long>> callables = new ArrayList<>();
 
-                for (int j = 0; j < files.size(); j++) {
+                for (int j = 0; j < catalog.getBooks().size(); j++) {
                     callables.add(callableTask);
                 }
 
                 List<Future<Long>> futures = executorService.invokeAll(callables);
 
-                WriteIntoFile.writeIntoFile(files.get(i) + " - " + word + " - " + futures.get(i).get(), "result.txt");
+                WriteIntoFile.writeIntoFile(
+                        catalog.getBooks().get(i).getName() + " - " + word + " - " + futures.get(i).get(), "result.txt");
             }
 
             System.out.println("0 - продолжить поиск;\n1 - завершить поиск;");

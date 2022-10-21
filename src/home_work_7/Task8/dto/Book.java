@@ -1,31 +1,36 @@
 package home_work_7.Task8.dto;
 
-import java.util.List;
 
 public class Book {
     private String name;
-    private List<String> words;
+    private String text;
 
-    public Book(List<String> words) {
-        this.words = words;
+    public Book(String name, String text) {
+        this.name = name;
+        this.text = text;
     }
 
-    public Book(String name) {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 
-    public List<String> getWord() {
-        return words;
+    public String getText() {
+        return text;
     }
 
-    public void setWord(List<String> word) {
-        this.words = word;
+    public void setText(String text) {
+        this.text = text;
     }
 
     @Override
     public String toString() {
         return "Book{" +
-                "word=" + words +
+                "name='" + name + '\'' +
+                ", text='" + text + '\'' +
                 '}';
     }
 }
