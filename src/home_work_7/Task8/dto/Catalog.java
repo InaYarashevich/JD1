@@ -1,6 +1,5 @@
 package home_work_7.Task8.dto;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Catalog {
