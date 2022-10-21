@@ -44,4 +44,8 @@ public class EasySearch implements ISearchEngine {
         }
         return count;
     }
+
+    public String getSearchResult(String bookName, String searchItem, long foundCount){
+        return bookName + " - " + searchItem + " - " + foundCount;
+    }
 }

@@ -20,7 +20,7 @@ public class Task8Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите адрес папки: ");
         String path = scanner.next();
-        
+
         int catalogSize = ReadDirectory.getFiles(path).size();
         List<String> booksNames = ReadDirectory.getFiles(path);
         List<String> booksText = new ArrayList<>();
@@ -58,7 +58,11 @@ public class Task8Main {
                 List<Future<Long>> futures = executorService.invokeAll(callables);
 
                 WriteIntoFile.writeIntoFile(
-                        catalog.getBooks().get(i).getName() + " - " + word + " - " + futures.get(i).get(), "result.txt");
+                        easySearch.getSearchResult(catalog.getBooks().get(i).getName(), word, futures.get(i).get()),
+                        "result.txt");
+
+               // WriteIntoFile.writeIntoFile(
+               //         catalog.getBooks().get(i).getName() + " - " + word + " - " + futures.get(i).get(), "result.txt");
             }
 
             System.out.println("0 - продолжить поиск;\n1 - завершить поиск;");
