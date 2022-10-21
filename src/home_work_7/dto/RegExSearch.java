@@ -11,15 +11,38 @@ public class RegExSearch implements ISearchEngine {
     @Override
     public long search(String text, String word) {
         long count = 0;
-        Pattern pattern = Pattern.compile(REGEX);
-        Matcher matcher = pattern.matcher(word);
 
-        do{
-          if (matcher.matches()) {
-              count++;
-          }
+        Pattern first = Pattern.compile("^" + word + "$");
+        Matcher fir = first.matcher(text);
+        if(fir.matches()){
+            count++;
+        }
 
-        }while(matcher.start() != matcher.end());
+        first = Pattern.compile("(?m)^" + word + "\\s*(\\s-|\\s|--|!|\"|;|'|:|\\(|\\)|\\*|,|\\?|\\.)\\s*");
+        fir = first.matcher(text);
+        if(fir.find(0)){
+            count++;
+        }
+
+        Pattern patern = Pattern.compile("\\s*(\\s-|\\s|--|!|\"|;|'|:|\\(|\\)|\\*|,|\\?|\\.)\\s*"
+                + word +
+                "\\s*(\\s-|\\s|--|!|\"|;|'|:|\\(|\\)|\\*|,|\\?|\\.)\\s*");
+        Matcher matcher = patern.matcher(text);
+
+        boolean flag;
+        while ((flag = matcher.find())){
+            if(flag){
+                count++;
+            }
+        }
+
+        patern =  Pattern.compile("\\s*(\\s-|\\s|--|!|\"|;|'|:|\\(|\\)|\\*|,|\\?|\\.)\\s*"
+                + word + "$");
+        matcher = patern.matcher(text);
+        if(matcher.find()){
+            count++;
+        }
+
         return count;
     }
 }
