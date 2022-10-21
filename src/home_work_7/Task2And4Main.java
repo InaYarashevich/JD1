@@ -5,9 +5,9 @@ import home_work_7.dto.EasySearch;
 public class Task2And4Main {
     public static void main(String[] args) {
         //String text = ReadFromFile.read("Война_и_мир.txt");
-        String text = "привет,какдела!";
+        String text = "привет,какдела!привет,какдела!";
         EasySearch easySearch = new EasySearch();
-        System.out.println("Количество встречающихся слов: " + easySearch.search(text, ""));
+        System.out.println("Количество встречающихся слов: " + easySearch.search(text, "какдела"));
 
         //RegExSearch regExSearch = new RegExSearch();
         //System.out.println("Количество встречающихся слов: " + regExSearch.search(text, "мир"));
