@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Task2_1 {
+public class WorkWithSet {
     /**
      * метод создания сета из переданной в параметре строки
      *

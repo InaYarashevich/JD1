@@ -4,8 +4,8 @@ import home_work_7.comparator.ComparatorInteger;
 
 import java.util.*;
 
-public class Task2_2 {
-    
+public class WorkWithMap {
+
     /**
      * метод создает Map из переданного как аргумент текста, где ключ - слово,
      * значение - количество раз, которое слово встречается в тексте
