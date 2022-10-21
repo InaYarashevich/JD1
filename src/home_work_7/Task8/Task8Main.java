@@ -20,8 +20,7 @@ public class Task8Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите адрес папки: ");
         String path = scanner.next();
-
-
+        
         int catalogSize = ReadDirectory.getFiles(path).size();
         List<String> booksNames = ReadDirectory.getFiles(path);
         List<String> booksText = new ArrayList<>();
