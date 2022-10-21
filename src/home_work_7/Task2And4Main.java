@@ -25,10 +25,15 @@ public class Task2And4Main {
         System.out.println("Количество слов в тексте: " + workWithSet.getCountWords(stringSet));
         System.out.println("Set<String>: " + stringSet);
         System.out.println("Map<String, Integer>: " + result);
-        //System.out.println("Отсортированный по количеству использования слов List: " + sortListInDescendingOrder(createListFromMapValues(result)));
-        //System.out.println(sortListInDescendingOrder(createListFromMapValues(wordsMap)));
-        //Map<String, Integer> result1 = getTopWords(result, sortListInDescendingOrder(createListFromMapValues(result)), 5);
-        //System.out.println("Top words: " + result1);
+        System.out.println("Отсортированный по количеству использования слов List: " +
+                workWithMap.sortListInDescendingOrder(workWithMap.createListFromMapValues(result)));
+        System.out.println(workWithMap.sortListInDescendingOrder(workWithMap.createListFromMapValues(result)));
+        Map<String, Integer> result1 = workWithMap.getTopWords(
+                result,
+                workWithMap.sortListInDescendingOrder(
+                        workWithMap.createListFromMapValues(result)),
+                5);
+        System.out.println("Top words: " + result1);
 
     }
 }
