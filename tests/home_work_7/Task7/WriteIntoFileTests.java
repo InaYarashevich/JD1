@@ -17,6 +17,17 @@ public class WriteIntoFileTests {
                 text,
                 ReadFromFile.read(fileName),
                 "Текст, записанный файл, не соответствует тексту в файле"
-                );
+        );
+    }
+
+    @Test
+    public void writeIntoFileAppendTest(){
+        WriteIntoFile.writeIntoFile("мама", fileName);
+        WriteIntoFile.writeIntoFile(" мыла", fileName);
+        Assertions.assertEquals(
+                "мама мыла",
+                ReadFromFile.read(fileName),
+                "Текст, записанный в файл, не соответствует тексту в файле."
+        );
     }
 }
