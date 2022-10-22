@@ -22,12 +22,11 @@ public class Task2And4Main {
         Set<String> stringSet = workWithSet.createSetFromString(text);
         Map<String, Integer> result = workWithMap.createMapFromString(text);
 
-        System.out.println("Количество слов в тексте: " + workWithSet.getCountWords(stringSet));
-        System.out.println("Set<String>: " + stringSet);
+        //System.out.println("Количество слов в тексте: " + workWithSet.getCountWords(stringSet));
+        //System.out.println("Set<String>: " + stringSet);
         System.out.println("Map<String, Integer>: " + result);
-        System.out.println("Отсортированный по количеству использования слов List: " +
-                workWithMap.sortListInDescendingOrder(workWithMap.createListFromMapValues(result)));
-        System.out.println(workWithMap.sortListInDescendingOrder(workWithMap.createListFromMapValues(result)));
+        //System.out.println("Отсортированный по количеству использования слов List: " +
+         //       workWithMap.sortListInDescendingOrder(workWithMap.createListFromMapValues(result)));
         Map<String, Integer> result1 = workWithMap.getTopWords(
                 result,
                 workWithMap.sortListInDescendingOrder(

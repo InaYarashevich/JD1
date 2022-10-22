@@ -20,11 +20,6 @@ public class WorkWithSet {
 
         for (int i = 0; i < words.length; i++) {
             words[i] = words[i].replaceAll("[()\",:;.!?]+", "");
-
-            if (words[i].startsWith("-")) {
-                words[i] = words[i].replaceAll("-", "");
-            }
-
             resultSet.add(words[i]);
         }
         return resultSet;
