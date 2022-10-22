@@ -258,4 +258,14 @@ public class EasySearchTests {
                 "Слово, превышающее длину строки, найдено в строке."
         );
     }
+
+    @Test
+    public void getSearchResultTest(){
+        EasySearch easySearch = new EasySearch();
+        Assertions.assertEquals(
+                "war_and_peace.txt - Java - 1",
+                easySearch.getSearchResult("war_and_peace.txt", "Java", 1),
+                "Результат поиска неверный."
+        );
+    }
 }
