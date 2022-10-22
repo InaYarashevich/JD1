@@ -14,7 +14,5 @@ public class Main {
         System.out.println("Выберите пиццу: ");
         int pizza = scanner.nextInt();
         menu.getItems().get(pizza);
-
-
     }
 }

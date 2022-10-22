@@ -16,3 +16,4 @@ Task 7: - JAVA_PROGRAMMING\HomeWork\src\home_work_7\Task7\Main.java
         - JAVA_PROGRAMMING\HomeWork\tests\home_work_7\Task7
 
 Task 8: - JAVA_PROGRAMMING\HomeWork\src\home_work_7\Task8
+        - JAVA_PROGRAMMING\HomeWork\tests\home_work_7\Task8
